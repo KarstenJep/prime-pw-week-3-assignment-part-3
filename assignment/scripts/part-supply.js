@@ -39,7 +39,7 @@ for (let i=0; i<supplyChanges.length; i++ ){
     console.log('Added ' + supplyChanges[i] + ' parts.');
   } else if (supplyChanges[i] < 0) {
     console.log('Part count ' + supplyChanges[i] + '.');
-  } else if (supplyChanges[i] = 0){
+  } else if (supplyChanges[i] === 0){
   }
 }
 
@@ -48,11 +48,48 @@ for (let i=0; i<supplyChanges.length; i++ ){
 console.log('---  Stretch Goals  ---');
 // 7. Rewrite the `for` loop from #6 as a `for of` loop.
 console.log('7. Showing supplyChanges with "for of" loop');
+for (const parts of supplyChanges) {
+  if (parts > 0) {
+    console.log('Added ' + parts + ' parts.');
+  } else if (parts < 0) {
+    console.log('Part count ' + parts + '.');
+  } else if (parts === 0){
+  }
+}
+  // Rewrote #7 with ternary instead of If...else
+  // for (const parts of supplyChanges)
+  // parts > 0 ?
+  // console.log('Added ' + parts + ' parts.') :
+  // console.log('Part count ' + parts + '.');
+  // }
+
 
 // 8. Rewrite the `for` loop from #6 as a `while` loop.
 console.log('8. Showing supplyChanges with "while" loop');
-
+let items = 0;
+while (items < supplyChanges.length) {
+  if (supplyChanges[items] > 0) {
+    console.log('Added ' + supplyChanges[items] + ' parts.');
+  } else if (supplyChanges[items] < 0) {
+    console.log('Part count ' + supplyChanges[items] + '.');
+  } else if (supplyChanges[items] === 0){
+  } items++;
+}
 
 // 9. Write a loop to determine the total number of parts available by
 //    adding up all the numbers in the 'supplyChanges' array.
 console.log('9. Total supplies available is:');
+
+// let totalParts = 0;
+// for (let i=0; i<supplyChanges.length; i++){
+//   totalParts += supplyChanges[i];
+//   console.log('Running total:', totalParts);
+// }
+// console.log('Total supplies available:', totalParts);
+
+let totalParts = 0;
+for (let part of supplyChanges){
+ totalParts += part;
+ console.log('Running total:', totalParts);
+}
+console.log('Total supplies available:', totalParts);
