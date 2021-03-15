@@ -48,7 +48,7 @@ for (let i=0; i<supplyChanges.length; i++ ){
 console.log('---  Stretch Goals  ---');
 // 7. Rewrite the `for` loop from #6 as a `for of` loop.
 console.log('7. Showing supplyChanges with "for of" loop');
-for (const parts of supplyChanges) {
+for (parts of supplyChanges) {
   if (parts > 0) {
     console.log('Added ' + parts + ' parts.');
   } else if (parts < 0) {
@@ -58,10 +58,10 @@ for (const parts of supplyChanges) {
 }
   // Rewrote #7 with ternary instead of if...else
 console.log('** supplyChanges with "for of" + ternary **');
-for (const partsss of supplyChanges)
-  partsss > 0 ?
-  console.log('Added ' + partsss + ' parts.') :
-  console.log('Part count ' + partsss + '.');
+for (ter of supplyChanges)
+  ter >= 0 ?
+  console.log('Added ' + ter + ' parts.') :
+  console.log('Part count ' + ter + '.');
 
 
 // 8. Rewrite the `for` loop from #6 as a `while` loop.
@@ -90,17 +90,25 @@ console.log('Total supplies available:', totalParts);
 // Using a 'for of' loop:
 console.log("** Using 'for of' loop **");
 let totalPart = 0;
-for (let part of supplyChanges){
+for ( part of supplyChanges){
   totalPart += part;
 }
 console.log('Total supplies available:', totalPart);
 
-// Using 'while' loop
-console.log("** Using 'while' loop **");
+// Using 'for in' loop
+console.log("** Using 'for in' loop **");
 let totalPar = 0;
-let x = 0
-while ( x < supplyChanges.length){
-  totalPar = supplyChanges[x] + totalPar;
-  x++;
+for ( p in supplyChanges){
+  totalPar += supplyChanges[p];
 }
 console.log('Total supplies available:', totalPar);
+
+// Using 'while' loop
+console.log("** Using 'while' loop **");
+let totalPa = 0;
+let x = 0
+while ( x < supplyChanges.length){
+  totalPa = supplyChanges[x] + totalPa;
+  x++;
+}
+console.log('Total supplies available:', totalPa);
